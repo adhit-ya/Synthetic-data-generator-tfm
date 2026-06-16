@@ -1,0 +1,38 @@
+corpus_dir: synthetic_enterprise_generator/outputs/smoke_all_world_types
+output_dir: evaluation/outputs
+seed: 42
+sample_rows_per_dataset: 5000
+max_numeric_features_for_stats: 128
+max_correlation_features: 60
+
+benchmarks:
+  enabled: true
+  openml:
+    enabled: true
+    dataset_ids:
+      - 31      # credit-g
+      - 37      # diabetes
+      - 44      # spambase
+      - 54      # vehicle
+      - 151     # electricity
+      - 188     # eucalyptus
+      - 469     # analcatdata_dmft
+      - 1049    # pc4
+      - 1067    # kc1
+      - 1461    # bank-marketing
+      - 1464    # blood-transfusion-service-center
+      - 1480    # ilpd
+      - 1590    # adult
+      - 40945   # titanic
+      - 41147   # albert
+    max_datasets: 15
+  local_paths: []
+
+visualization:
+  formats: ["png", "pdf", "svg"]
+  dpi: 300
+  max_points_for_embedding: 500
+
+report:
+  title: "Mixture-of-Worlds Synthetic Corpus Evaluation"
+  generate_pdf: true
