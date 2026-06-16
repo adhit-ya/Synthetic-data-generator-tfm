@@ -1,0 +1,60 @@
+seed: 42
+n_worlds: 1
+rows_per_world: 100000
+randomize_row_counts: false
+world_type: "enterprise"
+min_features: 16
+max_features: 32
+max_table_cells: 20000000
+classification_classes: 3
+class_imbalance: 0.25
+world_type_weights:
+  enterprise: 1.0
+  scientific: 0.0
+  iid: 0.0
+  temporal: 0.0
+  relational: 0.0
+  sparse: 0.0
+  advanced_forecasting: 0.0
+require_tabpfn_ecosystem: false
+tabpfn_max_rows: 10000
+compute_device: "cuda"
+multiprocessing_workers: 1
+
+entity:
+  n_customers: 12000
+  n_products: 3000
+  n_machines: 1200
+  n_patients: 6000
+  avg_sessions_per_entity: 3.0
+  avg_rows_per_session: 4.0
+
+temporal:
+  start_date: "2022-01-01"
+  periods: 1095
+  granularity: "daily"
+  seasonality_strength: 0.25
+  drift_strength: 0.15
+  shift_probability: 0.25
+
+missingness:
+  mcar_rate: 0.03
+  mar_rate: 0.04
+  mnar_rate: 0.02
+  noise_rate: 0.03
+  outlier_rate: 0.01
+  sparse_column_probability: 0.08
+
+workflow:
+  domain: "retail"
+  min_sequence_length: 3
+  max_sequence_length: 8
+  branch_probability: 0.35
+  terminal_probability: 0.18
+
+export:
+  output_dir: "synthetic_enterprise_generator/outputs/astar_100k_gpu"
+  formats: ["csv", "parquet", "torch"]
+  train_fraction: 0.8
+  validation_fraction: 0.1
+  test_fraction: 0.1

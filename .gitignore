@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+synthetic_enterprise_generator/outputs/*
+!synthetic_enterprise_generator/outputs/.gitkeep
+synthetic_enterprise_generator/datasets/*
+!synthetic_enterprise_generator/datasets/.gitkeep
+
